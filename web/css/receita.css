@@ -1,0 +1,541 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+::-webkit-scrollbar
+{
+	width: 2px;
+
+}
+
+::-webkit-scrollbar-thumb 
+{
+	background: #5f4f46;
+	border-radius: 100px;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    background: #79695f;
+    display: flex;
+    flex-direction: column;
+}    
+
+.nava
+{
+    color: #d6d1cf;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+  
+.nava:hover
+{
+    opacity: 0.7;
+}
+
+
+.logo 
+{
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+ 
+
+nav 
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background: #5f4f46;
+    height: 10vh;
+}
+ 
+
+.nav-list
+{
+    list-style: none;
+    display: flex;
+}
+  
+.nav-list li 
+{
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+#pp
+{
+    border-radius: 50%;
+    height: 3.5vw;
+}
+
+#btn_form
+{
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
+
+#btn_logout
+{
+    border: none;
+    background-color: transparent;
+}
+
+#btn_logout img
+{
+    width: 65%;
+    border-radius: 50%;
+}
+
+#btn_logout img:hover
+{
+    filter: brightness(80%);
+}
+
+.mobile-menu 
+{
+    display: none;
+    cursor: pointer;
+}
+
+
+.mobile-menu div 
+{
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+
+@media (max-width: 999px) 
+{
+    body
+    {
+        overflow-x: hidden;
+    }
+
+    .nav-list 
+    {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background: #5f4f46;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+        z-index: 1;
+    }
+    .nav-list li
+    {
+        margin-left: 0;
+        opacity: 0;
+    }
+    .mobile-menu 
+    {
+        display: block;
+    }
+
+    #pp
+    {
+        border-radius: 50%;
+        height: 15.5vw;
+    }
+
+    #btn_form
+    {
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #btn_logout
+    {
+        border: none;
+        background-color: transparent;
+    }
+
+    #btn_logout img
+    {
+        width: 100%;
+        border-radius: 50%;
+    }
+
+    #btn_logout img:hover
+    {
+        filter: brightness(80%);
+    }
+
+}
+  
+.nav-list.active 
+{
+    transform: translateX(0);
+    z-index: 1;
+}
+
+
+@keyframes navLinkFade 
+{
+    from 
+    {
+      opacity: 0;
+      transform: translateX(50px);
+      
+    }
+
+    to 
+    {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+
+
+.mobile-menu.active .line1 
+{
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+  
+.mobile-menu.active .line2 
+{
+    opacity: 0;
+}
+  
+.mobile-menu.active .line3 
+{
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+
+
+.search-box{
+    background: #d6d1cf;
+    margin-top:  0px;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+
+.search-txt{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    transition: 0.4s;
+    width: 270px;
+}
+
+input::placeholder
+{
+    color:#5f4f46;
+}
+
+.search-btn{
+    float: right;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #dc7c5c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    transition: 0.4s;
+}
+
+
+.search-box:hover > .search-btn{
+    background: white;
+}
+
+
+/* PARTE DA RECEITA */
+
+section
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+section div
+{
+    background-color: #5f4f46;
+    border-radius: 0.5vw;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#titulo
+{
+    color: #d6d1cf;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+#img_receita
+{
+    border-radius: 0.5vw;
+    height: 500px; 
+    width: 500px;
+}
+
+#ingrediente
+{
+    color: #d6d1cf;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#tb
+{
+    padding: 10px;
+    width: 80%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url();
+}
+
+#afav
+{
+    padding: 20px;
+    margin-left: 50px;
+    height: 2vw;
+    width: 2vw;
+    border: none;
+    border-radius: 10%;
+    align-self: flex-end;
+    background-size: cover;
+    background-color: transparent;
+    background-image: url(unfavorite.png);
+}
+
+#nfav
+{
+    padding: 20px;
+    align-self: flex-end;
+    margin-left: 50px;
+    height: 2vw;
+    width: 2vw;
+    border: none;
+    border-radius: 10%;
+    align-self: flex-end;
+    background-size: cover;
+    background-color: transparent;
+    background-image: url(favorite.png);
+}
+
+#nfav:hover
+{
+    background-color: rgb(110, 109, 23);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#afav:hover
+{
+    cursor: pointer;
+    background-color: rgb(110, 109, 23);
+    transition: 0.3s;
+}
+
+#divilista
+{
+    background-color: #79675d;
+    width: 80%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.lii
+{
+    margin-bottom: 5px;
+    margin-left: 5px;
+    text-align: left;
+    color: #d6d1cf;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+}
+
+#modo
+{
+    margin-bottom: 5px;
+    margin-left: -10px;
+    text-align: left;
+    color: #d6d1cf;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif; 
+}
+
+.lio
+{
+    margin-bottom: 5px;
+    margin-left: 5px;
+    text-align: left;
+    color: #d6d1cf;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif; 
+}
+
+fieldset
+{
+    width: 80%;
+    border-radius: 0.5vw;
+    border: none;
+    padding: 10px;
+    background-color: #79675d;
+}
+
+#comentIn
+{
+    width: 100%;
+    height: 6vw;
+    word-wrap: break-word;
+    resize: none;   
+    padding: 0.4vw;
+    border-radius: 0.5vw;
+    color: #000000;
+    outline: none;
+    font-weight: 600;
+    background-color: #a79488;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+}
+
+#comentIn::placeholder
+{
+    color: #000000;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+} 
+
+#comentIn:focus
+{
+    background-color: #f1e7e1;
+    border: solid 1px; 
+    border-color: #79675d;
+}
+
+#sendC
+{
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    padding: 0.3vw 1vw 0.3vw 1vw;
+    border-radius: 1vw;
+    color: #ffffff;
+    border: black solid 1px;
+    background-color: #79675d;
+}
+#sendC:hover
+{
+    transition: 0.4s;
+    cursor: pointer;
+    color: black;
+    border: #745748 solid 1px;
+    background-color: #f1e7e2; 
+}
+
+
+#div_comment
+{
+    width: 80%; 
+    padding: 10px;
+    border-radius: 0.5vw;
+    border: none;
+    padding: 10px;
+    background-color: #79675d;
+}
+
+
+#noComment
+{
+    border: solid; 
+    width: 80%; 
+    padding: 10px;
+    border-radius: 0.5vw;
+    border: none;
+    padding: 10px;
+    background-color: #79675d;
+    font-size: 1.5vw;    
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+}
+
+#div_profile
+{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    width: 100%;
+}
+
+#prflimg
+{
+    width: 10%; 
+    height: 10%; 
+    border-radius: 50%;
+}
+
+#div_profile p
+{
+    margin-left: 10px;
+    font-size: 1.5vw;    
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+}
+
+#cmnt_text
+{
+    border-radius: 0.5vw;
+    margin-top: 15px;
+    padding: 10px;    
+    width: 100%;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    word-wrap: break-word;
+    background-color: #5f4f46;
+}
+
+#deletecoment
+{
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    align-self: flex-end;
+    margin-top: 5px;
+    padding: 0.1vw 1vw 0.1vw 1vw;
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+
+#deletecoment:hover
+{
+    transition: 0.5s;
+    text-decoration: underline;
+    color: rgb(148, 0, 0);
+}
